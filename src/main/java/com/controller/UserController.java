@@ -2,6 +2,7 @@ package com.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.mapper.UserMapper;
+import com.vo.UserVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -39,16 +41,22 @@ public class UserController {
     public String users(String userId, String groupId) {
         Map<String, String> map = new HashMap<String, String>();
         String userVo = "";
-        map.put("userId", userId);
-        map.put("groupId", groupId);
+        if (userId != null && !userId.isEmpty()) {
+            map.put("userId", userId);
+        }
+        if (groupId != null && !groupId.isEmpty()) {
+            map.put("groupId", groupId);
+        }
 
         // 使用外部缓存
         if (groupId != null && !groupId.isEmpty()) {
-            if (valueOperationStr.get(groupId) != null) {
-                userVo = valueOperationStr.get(groupId).toString();
 
+            if (valueOperationStr.get(groupId) != null && !valueOperationStr.get(groupId).isEmpty()) {
+
+                userVo = valueOperationStr.get(groupId).toString();
             } else {
-                userVo = JSON.toJSONString(userDao.getUsersList(map));
+                List<UserVo> list = userDao.getUsersList(map);
+                userVo = JSON.toJSONString(list);
                 valueOperationStr.set(groupId, userVo);
             }
         }
