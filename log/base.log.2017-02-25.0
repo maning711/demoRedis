@@ -1,0 +1,20 @@
+2017-02-25 19:35:54,367 INFO (StartupInfoLogger.java:48)- Starting DemoRedisApplication on ifly-PC with PID 11304 (E:\person_project\demoRedis\target\classes started by ifly in E:\person_project\demoRedis)
+2017-02-25 19:35:54,372 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.1.RELEASE, Spring v4.3.6.RELEASE
+2017-02-25 19:35:54,372 INFO (SpringApplication.java:637)- No active profile set, falling back to default profiles: default
+2017-02-25 19:36:08,991 INFO (StartupInfoLogger.java:57)- Started DemoRedisApplication in 15.336 seconds (JVM running for 16.659)
+2017-02-25 19:36:27,878 DEBUG (BaseJdbcLogger.java:181)- ==>  Preparing: select * FROM vote_record_memory v WHERE 1 = 1 and v.group_id = ? 
+2017-02-25 19:36:27,952 DEBUG (BaseJdbcLogger.java:181)- ==> Parameters: 99(String)
+2017-02-25 19:36:28,791 DEBUG (BaseJdbcLogger.java:181)- <==      Total: 3994
+2017-02-25 20:29:48,648 INFO (StartupInfoLogger.java:48)- Starting DemoRedisApplication on ifly-PC with PID 9792 (E:\person_project\demoRedis\target\classes started by ifly in E:\person_project\demoRedis)
+2017-02-25 20:29:48,655 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.1.RELEASE, Spring v4.3.6.RELEASE
+2017-02-25 20:29:48,656 INFO (SpringApplication.java:637)- No active profile set, falling back to default profiles: default
+2017-02-25 20:30:22,793 INFO (StartupInfoLogger.java:57)- Started DemoRedisApplication in 40.06 seconds (JVM running for 48.385)
+2017-02-25 20:30:48,799 DEBUG (UserController.java:46)- 访问set:key=null,value=null
+2017-02-25 20:31:11,987 DEBUG (UserController.java:46)- 访问set:key=test222,value=maning222
+2017-02-25 20:31:56,374 DEBUG (UserController.java:53)- 访问get:key=test222
+2017-02-25 20:58:59,430 INFO (StartupInfoLogger.java:48)- Starting DemoRedisApplication on ifly-PC with PID 17444 (E:\person_project\demoRedis\target\classes started by ifly in E:\person_project\demoRedis)
+2017-02-25 20:58:59,434 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.1.RELEASE, Spring v4.3.6.RELEASE
+2017-02-25 20:58:59,435 INFO (SpringApplication.java:637)- No active profile set, falling back to default profiles: default
+2017-02-25 21:00:43,322 INFO (StartupInfoLogger.java:48)- Starting DemoRedisApplication on ifly-PC with PID 9072 (E:\person_project\demoRedis\target\classes started by ifly in E:\person_project\demoRedis)
+2017-02-25 21:00:43,325 DEBUG (StartupInfoLogger.java:51)- Running with Spring Boot v1.5.1.RELEASE, Spring v4.3.6.RELEASE
+2017-02-25 21:00:43,326 INFO (SpringApplication.java:637)- No active profile set, falling back to default profiles: default

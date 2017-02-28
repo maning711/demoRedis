@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mapper.UserMapper">
+
+    <resultMap id="result_userMapper" type="com.vo.UserVo">
+        <result column="id" javaType="java.lang.String" property="id" />
+        <result column="user_id" javaType="java.lang.String" property="userId" />
+        <result column="vote_id" javaType="java.lang.String" property="voteId" />
+        <result column="group_id" javaType="java.lang.String" property="groupId" />
+        <result column="create_time" javaType="java.lang.String" property="createTime" />
+    </resultMap>
+
+    <select id="getUsersList" parameterType="map" resultMap="result_userMapper">
+        select *
+        FROM vote_record_memory v
+        <where>
+            1 = 1
+            <if test="userId != null">
+              and v.user_id = #{userId}
+            </if>
+            <if test="voteId != null">
+                and v.vote_id = #{voteId}
+            </if>
+            <if test="groupId != null">
+                and v.group_id = #{groupId}
+            </if>
+            <if test="createTime != null">
+                and v.create_time = #{createTime}
+            </if>
+        </where>
+    </select>
+</mapper>
