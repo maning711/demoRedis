@@ -1,11 +1,10 @@
 package com.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.config.ConstCommon;
 import com.mapper.UserMapper;
 import com.vo.UserVo;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,8 +41,13 @@ public class UserController {
 
     @ApiOperation(value="获得用户列表", notes="根据用户id和群组id搜索用户列表")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "userId", value = "用户ID", required = true, paramType = "query" ,dataType = "String"),
+            @ApiImplicitParam(name = "userId", value = "用户ID", required = true, paramType = "query" ,dataType = "UserVo"),
             @ApiImplicitParam(name = "groupId", value = "群组id", required = true, paramType = "query" ,dataType = "String")
+    })
+    @ApiResponses({
+        @ApiResponse(code= 400, message="成功", response = UserVo.class),
+        @ApiResponse(code= 405, message="业务发生错误", response = String.class),
+        @ApiResponse(code= 500, message="数据库操作失败", response = String.class)
     })
     @RequestMapping(value = "/users", method = { RequestMethod.GET })
     @ResponseBody
